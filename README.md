@@ -1,6 +1,6 @@
 # DIO Clone - React
 
-Um clone da plataforma DIO (Digital Innovation One) desenvolvido com React, incluindo autenticação, cadastro de usuários, e feed com cards de posts.
+Um clone da plataforma DIO (Digital Innovation One) desenvolvido com React e TypeScript, incluindo autenticação, cadastro de usuários, e feed com cards de posts.
 ## Imagens do site
 <img width="1906" height="873" alt="image" src="https://github.com/user-attachments/assets/3064b81b-e4f6-46e7-9b4d-f7ace5731863" />
 <img width="1908" height="876" alt="image" src="https://github.com/user-attachments/assets/34be45b8-de00-47f7-9781-bf5234ed8025" />
@@ -17,11 +17,12 @@ Este projeto é uma recriação da interface da plataforma DIO, uma plataforma d
 - **Componentes reutilizáveis** bem estruturados
 - **Integração com API** (JSON Server)
 - **Styled Components** para estilização
+- **TypeScript** para tipagem estática
 - **React Router** para navegação
 
 ## 🚀 Tecnologias Utilizadas
 
-- **React 19.2.4** - Framework JavaScript
+- **React 19.2.4** - Biblioteca JavaScript
 - **React Router DOM 7.13.0** - Roteamento
 - **Styled Components 6.3.9** - Estilização
 - **React Hook Form 7.71.1** - Gerenciamento de formulários
@@ -29,6 +30,7 @@ Este projeto é uma recriação da interface da plataforma DIO, uma plataforma d
 - **Axios** - Cliente HTTP
 - **React Icons 5.5.0** - Ícones
 - **JSON Server** - API mockada
+- **TypeScript 5.x** - Tipagem estática
 
 ## 📋 Funcionalidades
 
@@ -106,8 +108,8 @@ src/
 │   └── login/          # Página de login
 ├── services/           # Serviços (API)
 ├── styles/             # Estilos globais
-├── App.js              # Componente principal
-└── index.js            # Entrada da aplicação
+├── App.tsx             # Componente principal
+└── index.tsx           # Entrada da aplicação
 ```
 
 ## 🔐 Credenciais de Teste
