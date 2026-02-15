@@ -1,6 +1,11 @@
 # DIO Clone - React
 
 Um clone da plataforma DIO (Digital Innovation One) desenvolvido com React, incluindo autenticação, cadastro de usuários, e feed com cards de posts.
+## Imagens do site
+<img width="1906" height="873" alt="image" src="https://github.com/user-attachments/assets/3064b81b-e4f6-46e7-9b4d-f7ace5731863" />
+<img width="1908" height="876" alt="image" src="https://github.com/user-attachments/assets/34be45b8-de00-47f7-9781-bf5234ed8025" />
+<img width="1910" height="874" alt="image" src="https://github.com/user-attachments/assets/fd57e107-47fe-4563-8466-061c1134c141" />
+<img width="1885" height="870" alt="image" src="https://github.com/user-attachments/assets/5d7c318c-f761-4529-adc7-b5f30db9cb57" />
 
 ## 🎯 Sobre o Projeto
 
