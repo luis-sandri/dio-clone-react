@@ -1,8 +1,8 @@
 
 import { useNavigate } from 'react-router-dom';
-import { Button } from '../../components/button';
-import {Header} from '../../components/header';
-import {Container, TextContent, Title, TitleHighlight} from './styles'
+import Button from '../../components/button/index.tsx';
+import Header from '../../components/header/index.tsx';
+import {Container, TextContent, Title, TitleHighlight} from './styles.ts'
 const Home = () => {
     const navigate = useNavigate();
 
@@ -36,4 +36,4 @@ const Home = () => {
     )
 }
 
-export { Home };
+export default Home;

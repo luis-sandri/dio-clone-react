@@ -1,6 +1,7 @@
-import { ErrorText, IconContainer, InputContainer, InputText}  from './styles';
+import { ErrorText, IconContainer, InputContainer, InputText}  from './styles.ts';
 import { Controller } from 'react-hook-form';
-const Input = ({leftIcon, control, errorMessage, name, ...rest}) => {
+import { IInput } from './types.ts';
+const Input = ({leftIcon, control, errorMessage, name, ...rest}: IInput) => {
   return (
     <>
     <InputContainer>
@@ -18,6 +19,6 @@ const Input = ({leftIcon, control, errorMessage, name, ...rest}) => {
   )
 }
 
-export { Input };
+export default Input;
 
 

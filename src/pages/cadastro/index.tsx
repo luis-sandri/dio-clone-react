@@ -1,13 +1,14 @@
 import { useNavigate } from 'react-router-dom';
-import { Button } from '../../components/button';
-import { Header } from '../../components/header';
-import { Input } from '../../components/input';
+import Button from '../../components/button/index.tsx';
+import Header from '../../components/header/index.tsx';
+import Input from '../../components/input/index.tsx';
 import { MdEmail, MdLock, MdPerson } from 'react-icons/md';
 import { useForm } from 'react-hook-form';
-import { Login ,Container, Column, CreateText, ForgetPassowrd, Row, Title, TitleLogin, Wrapper, SubTitleLogin } from './styles'
+import { Login ,Container, Column, Row, Title, TitleLogin, Wrapper, SubTitleLogin } from './styles.ts'
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup'; 
-import { api } from  '../../services/api'
+import { api } from  '../../services/api.ts'
+import { IFormData } from './types.ts';
 
 const schema = yup.object({
     name: yup.string().required('Name is required'),
@@ -23,7 +24,7 @@ const Cadastro = () => {
             mode: 'onChange',
         }
     );
-    const onSubmit = async formData => {
+    const onSubmit = async (formData: IFormData) => {
         try{
             const response = await api.post('/users', {
                 name: formData.name,
@@ -70,4 +71,4 @@ const Cadastro = () => {
     )
 }
 
-export { Cadastro };
+export default Cadastro;

@@ -1,14 +1,15 @@
 import React from 'react'
-import { BuscarInputContainer, Row, Container, Input, Menu, Wrapper, MenuRight, ImgSize, UserPicture } from './styles'
-import { Button } from '../button';
-import logo from '../../assets/diologo.png'
+import { BuscarInputContainer, Row, Container, Input, Menu, Wrapper, MenuRight, ImgSize, UserPicture } from './styles.ts'
+import Button from '../button/index.tsx';
+import { diologo } from '../../assets';
 import { retrato } from '../../assets';
-    const Header = ({auth, image}) => {
+import { IHeader } from './types.ts';
+    const Header = ({auth}: IHeader) => {
   return (
     <Wrapper>
         <Container>
             <Row>
-                <ImgSize src={logo} alt='Logo DIO' className='ImgSize'/>
+                <ImgSize src={diologo} alt='Logo DIO' className='ImgSize'/>
                 {auth ? (
                 <>        
                     <BuscarInputContainer>
@@ -37,4 +38,4 @@ import { retrato } from '../../assets';
   )
 }
 
-export { Header }
+export default Header

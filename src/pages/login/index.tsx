@@ -1,13 +1,15 @@
 import { useNavigate } from 'react-router-dom';
-import { Button } from '../../components/button';
-import { Header } from '../../components/header';
-import { Input } from '../../components/input';
+import Button from '../../components/button/index.tsx';
+import Header from '../../components/header/index.tsx';
+import Input from '../../components/input/index.tsx';
 import { MdEmail, MdLock } from 'react-icons/md';
 import { useForm } from 'react-hook-form';
-import { Container, Column, CreateText, ForgetPassowrd, Row, Title, TitleLogin, Wrapper, SubTitleLogin } from './styles'
+import { Container, Column, CreateText, ForgetPassowrd, Row, Title, TitleLogin, Wrapper, SubTitleLogin } from './styles.ts'
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup'; 
-import { api } from  '../../services/api'
+import { api } from  '../../services/api.ts'
+import { IFormData } from '../cadastro/types.ts';
+import { IUser } from './types.ts';
 
 const schema = yup.object({
     email: yup.string().email('Field a valid email').required('Required field'),
@@ -17,17 +19,17 @@ const schema = yup.object({
 const Login = () => {
     const navigate = useNavigate();
 
-    const { control, handleSubmit, formState: { errors } } = useForm(
+    const { control, handleSubmit, formState: { errors, isValid } } = useForm(
         {resolver: yupResolver(schema),
             mode: 'onChange',
         }
     );
-    const onSubmit = async formData => {
+    const onSubmit = async (formData: IFormData) => {
         try{
             const response = await api.get(`/users`);
             console.log('All Users:', response.data);
             
-            const user = response.data.find(u => 
+            const user = response.data.find((u: IUser) => 
                 u.email === formData.email && u.password === formData.password
             );
             
@@ -60,7 +62,7 @@ const Login = () => {
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <Input name='email' control={control} errorMessage={errors?.email?.message} placeholder='E-mail' leftIcon={<MdEmail />}/>
                         <Input name='password' control={control} errorMessage={errors?.password?.message} placeholder='Senha' type='password' leftIcon={<MdLock />}/><br />
-                        <Button title='Entrar' variant='secondary' type='submit'></Button>
+                        <Button title='Entrar' variant='secondary' type='submit' disabled={isValid === false}></Button>
                     </form>
                     <Row>
                         <ForgetPassowrd>Esqueci minha senha</ForgetPassowrd>
@@ -72,4 +74,4 @@ const Login = () => {
     )
 }
 
-export { Login };
+export default Login;

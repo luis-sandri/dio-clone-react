@@ -1,7 +1,7 @@
 import React from 'react'
 import { FiThumbsUp } from 'react-icons/fi';
 import {CardContainer, Content, HasInfo, ImageBackground, PostInfo,
-        UserInfo, UserPicture, } from './styles';
+        UserInfo, UserPicture, } from './styles.ts';
 import { banner } from '../../assets';
 import { retrato } from '../../assets';
 const Card = () => {
@@ -31,4 +31,4 @@ const Card = () => {
   )
 }
 
-export  {Card};
+export default Card;
