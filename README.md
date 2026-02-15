@@ -181,13 +181,6 @@ PORT=3001 npm start
 npm run api -- --port 8002
 ```
 
-## 🚀 Deploy
-
-A aplicação pode ser facilmente deployada em:
-- **Vercel** - `vercel`
-- **Netlify** - Conecte seu repositório GitHub
-- **Heroku** - Use Procfile e buildpacks
-
 ## 👨‍💻 Autor
 
 Luis Sandri - [GitHub](https://github.com/luis-sandri)
